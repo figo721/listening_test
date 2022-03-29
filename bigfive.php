@@ -1,4 +1,4 @@
-
+<!-- This is for the Big-Five Personality Questions page of this project -->
 <!DOCTYPE html>
 
 <html lang="en">
@@ -116,25 +116,13 @@
         
         * {
             font-family: 'Oswald', sans-serif;
+            box-sizing: border-box;
         }
-        
-        .slidecontainer {
-            width: 95%;
-        }
-        
-        .slider {
-            width: 700px;
-            text-align: center;
-            align-content: top;
-            position: relative;
-            margin-left: auto !important;
-            margin-right: auto !important;
-        }
-        
+
         .slider {
             -webkit-appearance: none;
             appearance: none;
-            width: 90%;
+            width: 50%;
             height: 25px;
             background: #D3D3D3;
             outline: none;
@@ -143,7 +131,10 @@
             transition: opacity .2s;
         }
         
-    
+        .slider:hover {
+            opacity: 1;
+        }
+        
         .slider::-webkit-slider-thumb {
             -webkit-appearance: none;
             appearance: none;
@@ -168,7 +159,7 @@
         
         .sliderticks p {
             position: relative;
-            display: flex;
+            display:none;
             justify-content: center;
             text-align: center;
             width: 1px;
@@ -177,28 +168,54 @@
             line-height: 40px;
             margin: 0 0 20px 0;
         }
-
-        select {
-        text-align: center;
-        text-align-last: center;
-        -moz-text-align-last: center;
+        @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+        nav{
+        padding-left: 100px!important;
+        padding-right: 100px!important;
+        background: #1690A7;
+        font-family: 'Poppins', sans-serif;
+        } 
+        nav a.navbar-brand{
+            color: #fff;
+            font-size: 30px!important;
+            font-weight: 500;
         }
-        
+        button a{
+            color: #6665ee;
+            font-weight: 500;
+        }
+        button a:hover{
+            text-decoration: none;
+        }
+        h1{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100%;
+            text-align: center;
+            transform: translate(-50%, -50%);
+            font-size: 50px;
+            font-weight: 600;
+        }
+
     </style>
 
 </head>
 
 
 <body>
+    <nav class="navbar">
+    <a class="navbar-brand" href="#">Listening Test</a>
+    </nav>
+
     <!-- Swiper -->
     <div class="swiper mySwiper swiper-h">
-        <h1 style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color:darkblue;">
-            Listening Test</h1>       
+          
        <!--BigFive Personality Test-->
         <div class="swiper-slide" style="overflow: scroll;">
                 <div class="center_1">
                     <h2 style="font-weight:bold; color: darkgreen;">Big Five Personality Test</h2><br><br>
-                    <h6>The test consists of 25 items that you must rate on how true they are about you on a five point scale where 1=0e, 3=Neutral and 5=Agree. It takes about 8 minutes to complete.
+                    <h6>The test consists of 10 items that you must rate on how true they are about you on a seven point scale where 1=Strongly disagree, 4=Neither agree nor disagree and 7=Strongly agree. It takes about 5 minutes to complete.
                         <br>
                     </h6>
                     <div class="block_1 hline-bottom"></div>
@@ -209,327 +226,209 @@
                             <div class="col-lg-10 mx-auto ">      
                                     <div class="control-group ">
                                     <form action = "insert_3.php" method="POST">
-                                        <div class="form-group floating-label-form-group controls mb-0 pb-2 ">
-                                            <p class="lead">Q1. I am the life of the party.</p>
-                                            <select name = "big_five-1" id="2-1" required>
-                                                <option>Please Choose An Answer</option>
-                                                <option value="0">0</option>
-                                                <option value="1">1</option> 
-                                                <option value="2">2</option>
-                                                <option value="3">3</option>
-                                                <option value="4">4</option>
-                                                <option value="5">5</option>
-                                            </select><br><br>
+                                        <div class="slidecontainer">
+                                            <h align="Center"><br>
+                                                <p class="lead">Q1. I see myself as extraverted, enthusiastic.</p>
+                                            <input type="range" name = "bigfive-1" style="width: 100%;" value="4" min="1" max="7" step="1" class="slider"ß id="bigfive1" required>     
+                                            <div class="sliderticks">
+                                            <p>0</p>
+                                            <p>1</p>
+                                            <P>2</P>
+                                            <p>3</p>
+                                            <p>4</p>
+                                            <p>5</p>
+                                            <p>6</p>
+                                            <p>7</p>
+                                            </div>
+                                            <p>Value: <span id="bigfive-1"></span></p>
+                                        </span>
+                                                    </h>
+                                        </div>
 
-                                            <div class="block_1 hline-bottom"></div>
-                                            <p class="lead">Q2. I feel little concern for others.</p>
-                                            <select name = "big_five-2" id="2-2" required>
-                                                <option>Please Choose An Answer</option>
-                                                <option value="0">0</option>
-                                                <option value="1">1</option>
-                                                <option value="2">2</option>
-                                                <option value="3">3</option>
-                                                <option value="4">4</option>
-                                                <option value="5">5</option>
-                                            </select><br><br>
+                                        <div class="block_1 hline-bottom"></div>
+                                        <div class="slidecontainer">
+                                            <h align="Center"><br>
+                                                <p class="lead">Q2. I see myself as critical, quarrelsome.</p>
+                                                <input type="range" name = "bigfive-2" style="width: 100%;" value="4" min="1" max="7" step="1" class="slider"ß id="bigfive2" required>     
+                                            <div class="sliderticks">
+                                            <p>0</p>
+                                            <p>1</p>
+                                            <P>2</P>
+                                            <p>3</p>
+                                            <p>4</p>
+                                            <p>5</p>
+                                            <p>6</p>
+                                            <p>7</p>
+                                            </div>
+                                            <p>Value: <span id="bigfive-2"></span></p>
+                                        </span>
+                                                    </h>
+                                        </div>
 
-                                            <div class="block_1 hline-bottom"></div>
-
-                                            <p class="lead">Q3. I am always prepared.</p>
-                                            <select name = "big_five-3" id="2-3" required>
-                                                <option>Please Choose An Answer</option>
-                                                <option value="0">0</option>
-                                                <option value="1">1</option>
-                                                <option value="2">2</option>
-                                                <option value="3">3</option>
-                                                <option value="4">4</option>
-                                                <option value="5">5</option>
-                                            </select><br><br>
-
-                                            <div class="block_1 hline-bottom"></div>
-
-                                            <p class="lead">Q4. I get stressed out easily.</p>
-                                            <select name = "big_five-4" id="2-4" required>
-                                                <option>Please Choose An Answer</option>
-                                                <option value="0">0</option>
-                                                <option value="1">1</option> 
-                                                <option value="2">2</option>
-                                                <option value="3">3</option>
-                                                <option value="4">4</option>
-                                                <option value="5">5</option>
-                                            </select><br><br>
-
-                                            <div class="block_1 hline-bottom"></div>
-
-                                            <p class="lead">Q5. I have a rich vocabulary.</p>
-                                            <select name = "big_five-5" id="2-5" required>
-                                                <option>Please Choose An Answer</option>
-                                                <option value="0">0</option>
-                                                <option value="1">1</option> 
-                                                <option value="2">2</option>
-                                                <option value="3">3</option>
-                                                <option value="4">4</option>
-                                                <option value="5">5</option>
-                                            </select><br><br>
+                                        <div class="block_1 hline-bottom"></div>
+                                        <div class="slidecontainer">
+                                            <h align="Center"><br>
+                                                <p class="lead">Q3. I see myself as dependable, self-disciplined.</p>
+                                                <input type="range" name = "bigfive-3" style="width: 100%;" value="4" min="1" max="7" step="1" class="slider"ß id="bigfive3" required>     
+                                            <div class="sliderticks">
+                                            <p>0</p>
+                                            <p>1</p>
+                                            <P>2</P>
+                                            <p>3</p>
+                                            <p>4</p>
+                                            <p>5</p>
+                                            <p>6</p>
+                                            <p>7</p>
+                                            </div>
+                                            <p>Value: <span id="bigfive-3"></span></p>
+                                        </span>
+                                                    </h>
+                                        </div>
 
 
+                                        <div class="block_1 hline-bottom"></div>
+                                        <div class="slidecontainer">
+                                            <h align="Center"><br>
+                                                <p class="lead">Q4. I see myself as anxious, easily upset.</p>
+                                                <input type="range" name = "bigfive-4" style="width: 100%;" value="4" min="1" max="7" step="1" class="slider"ß id="bigfive4" required>     
+                                            <div class="sliderticks">
+                                            <p>0</p>
+                                            <p>1</p>
+                                            <P>2</P>
+                                            <p>3</p>
+                                            <p>4</p>
+                                            <p>5</p>
+                                            <p>6</p>
+                                            <p>7</p>
+                                            </div>
+                                            <p>Value: <span id="bigfive-4"></span></p>
+                                        </span>
+                                                    </h>
+                                        </div>
 
-                                            <div class="block_1 hline-bottom"></div>
+                                        <div class="block_1 hline-bottom"></div>
+                                        <div class="slidecontainer">
+                                            <h align="Center"><br>
+                                                <p class="lead">Q5. I see myself as open to new experiences, complex.</p>
+                                                <input type="range" name = "bigfive-5" style="width: 100%;" value="4" min="1" max="7" step="1" class="slider"ß id="bigfive5" required>     
+                                            <div class="sliderticks">
+                                            <p>0</p>
+                                            <p>1</p>
+                                            <P>2</P>
+                                            <p>3</p>
+                                            <p>4</p>
+                                            <p>5</p>
+                                            <p>6</p>
+                                            <p>7</p>
+                                            </div>
+                                            <p>Value: <span id="bigfive-5"></span></p>
+                                        </span>
+                                            </h>
+                                        </div>
 
-                                            <p class="lead">Q6. I don't talk a lot.</p>
-                                            <select name = "big_five-6" id="2-6" required>
-                                                <option>Please Choose An Answer</option>
-                                                    <option value="0">0</option>
-                                                    <option value="1">1</option> 
-                                                    <option value="2">2</option>
-                                                    <option value="3">3</option>
-                                                    <option value="4">4</option>
-                                                    <option value="5">5</option>
-                                            </select><br><br>
-
-                                            <div class="block_1 hline-bottom"></div>
-
-                                            <p class="lead">Q7. I am interested in people.</p>
-                                            <select name = "big_five-7" id="2-7" required>
-                                                <option>Please Choose An Answer</option>
-                                                <option value="0">0</option>
-                                                <option value="1">1</option> 
-                                                <option value="2">2</option>
-                                                <option value="3">3</option>
-                                                <option value="4">4</option>
-                                                <option value="5">5</option>
-                                                </select><br><br>
-
-
-                                            <div class="block_1 hline-bottom"></div>
-                                            <p class="lead">Q8. I leave my belongings around.</p>
-                                            <select name = "big_five-8"id="2-8" required>
-                                                <option>Please Choose An Answer</option>
-                                                <option value="0">0</option>
-                                                <option value="1">1</option> 
-                                                <option value="2">2</option>
-                                                <option value="3">3</option>
-                                                <option value="4">4</option>
-                                                <option value="5">5</option>
-                                                </select><br><br>
-
-                                            <div class="block_1 hline-bottom"></div>
-                                            <p class="lead">Q9. I am relaxed most of the time.</p>
-                                            <select name = "big_five-9" id="2-9" required>
-                                                <option>Please Choose An Answer</option>
-                                                <option value="0">0</option>
-                                                <option value="1">1</option>
-                                                <option value="2">2</option>
-                                                <option value="3">3</option>
-                                                <option value="4">4</option>
-                                                <option value="5">5</option>
-                                                </select><br><br>
-
-
-                                            <div class="block_1 hline-bottom"></div>
-                                            <p class="lead">Q10. I have difficulty understanding abstract ideas.</p>
-                                            <select name = "big_five-10" id="2-10" required>
-                                                <option>Please Choose An Answer</option>
-                                                <option value="0">0</option>
-                                                <option value="1">1</option>
-                                                <option value="2">2</option>
-                                                <option value="3">3</option>
-                                                <option value="4">4</option>
-                                                <option value="5">5</option>
-                                                </select><br><br>
+                                        <div class="block_1 hline-bottom"></div>
+                                        <div class="slidecontainer">
+                                            <h align="Center"><br>
+                                                <p class="lead">Q6. I see myself as reserved, quiet a lot.</p>
+                                                <input type="range" name = "bigfive-6" style="width: 100%;" value="4" min="1" max="7" step="1" class="slider"ß id="bigfive6" required>     
+                                            <div class="sliderticks">
+                                            <p>0</p>
+                                            <p>1</p>
+                                            <P>2</P>
+                                            <p>3</p>
+                                            <p>4</p>
+                                            <p>5</p>
+                                            <p>6</p>
+                                            <p>7</p>
+                                            </div>
+                                            <p>Value: <span id="bigfive-6"></span></p>
+                                        </span>
+                                            </h>
+                                        </div>
 
 
-                                            <div class="block_1 hline-bottom"></div>
-                                            <p class="lead">Q11. I insult people.</p>
-                                            <select name = "big_five-11" id="2-11" required>
-                                                <option>Please Choose An Answer</option>
-                                                <option value="0">0</option>
-                                                <option value="1">1</option>
-                                                <option value="2">2</option>
-                                                <option value="3">3</option>
-                                                <option value="4">4</option>
-                                                <option value="5">5</option>
-                                            </select><br><br>
+                                        <div class="block_1 hline-bottom"></div>
+                                        <div class="slidecontainer">
+                                            <h align="Center"><br>
+                                                <p class="lead">Q7. I see myself as sympathetic, warm.</p>
+                                                <input type="range" name = "bigfive-7" style="width: 100%;" value="4" min="1" max="7" step="1" class="slider"ß id="bigfive7" required>     
+                                            <div class="sliderticks">
+                                            <p>0</p>
+                                            <p>1</p>
+                                            <P>2</P>
+                                            <p>3</p>
+                                            <p>4</p>
+                                            <p>5</p>
+                                            <p>6</p>
+                                            <p>7</p>
+                                            </div>
+                                            <p>Value: <span id="bigfive-7"></span></p>
+                                        </span>
+                                            </h>
+                                        </div>
 
-                                            <div class="block_1 hline-bottom"></div>
-                                            <p class="lead">Q12. I pay attention to details.</p>
-                                            <select name = "big_five-12" id="2-12" required>
-                                                <option>Please Choose An Answer</option>
-                                                <option value="0">0</option>
-                                                <option value="1">1</option>
-                                                <option value="2">2</option>
-                                                <option value="3">3</option>
-                                                <option value="4">4</option>
-                                                <option value="5">5</option>
-                                            </select><br><br>
+                                        <div class="block_1 hline-bottom"></div>
+                                        <div class="slidecontainer">
+                                            <h align="Center"><br>
+                                                <p class="lead">Q8. I see myself as disorganized, careless.</p>
+                                                <input type="range" name = "bigfive-8" style="width: 100%;" value="4" min="1" max="7" step="1" class="slider"ß id="bigfive8" required>     
+                                            <div class="sliderticks">
+                                            <p>0</p>
+                                            <p>1</p>
+                                            <P>2</P>
+                                            <p>3</p>
+                                            <p>4</p>
+                                            <p>5</p>
+                                            <p>6</p>
+                                            <p>7</p>
+                                            </div>
+                                            <p>Value: <span id="bigfive-8"></span></p>
+                                        </span>
+                                            </h>
+                                        </div>
 
-
-                                            <div class="block_1 hline-bottom"></div>
-                                            <p class="lead">Q13. I worry about things.</p>
-                                            <select name = "big_five-13" id="2-13" required>
-                                                <option>Please Choose An Answer</option>
-                                                <option value="0">0</option>
-                                                <option value="1">1</option>
-                                                <option value="2">2</option>
-                                                <option value="3">3</option>
-                                                <option value="4">4</option>
-                                                <option value="5">5</option>
-                                                </select><br><br>
-
-
-
-                                            <div class="block_1 hline-bottom"></div>
-                                            <p class="lead">Q14. I have a vivid imagination.</p>
-                                            <select name="big_five-14" id="2-14" required>
-                                                <option>Please Choose An Answer</option>
-                                                <option value="0">0</option>
-                                                <option value="1">1</option>
-                                                <option value="2">2</option>
-                                                <option value="3">3</option>
-                                                <option value="4">4</option>
-                                                <option value="5">5</option>
-                                            </select><br><br>
-
-                                            <div class="block_1 hline-bottom"></div>
-                                            <p class="lead">Q15. I keep in the background.</p>
-                                            <select name = "big_five-15" id="2-15" required>
-                                                <option>Please Choose An Answer</option>
-                                                <option value="0">0</option>
-                                                <option value="1">1</option>
-                                                <option value="2">2</option>
-                                                <option value="3">3</option>
-                                                <option value="4">4</option>
-                                                <option value="5">5</option>
-                                            </select><br><br>
+                                        <div class="block_1 hline-bottom"></div>
+                                        <div class="slidecontainer">
+                                            <h align="Center"><br>
+                                                <p class="lead">Q9. I see myself as calm, emotionally stable.</p>
+                                                <input type="range" name = "bigfive-9" style="width: 100%;" value="4" min="1" max="7" step="1" class="slider"ß id="bigfive9" required>     
+                                            <div class="sliderticks">
+                                            <p>0</p>
+                                            <p>1</p>
+                                            <P>2</P>
+                                            <p>3</p>
+                                            <p>4</p>
+                                            <p>5</p>
+                                            <p>6</p>
+                                            <p>7</p>
+                                            </div>
+                                            <p>Value: <span id="bigfive-9"></span></p>
+                                        </span>
+                                            </h>
+                                        </div>
 
 
-                                            <div class="block_1 hline-bottom"></div>
-                                            <p class="lead">Q16. I sympathize with others' feelings.</p>
-                                            <select name = "big_five-16" id="2-16" required>
-                                                <option>Please Choose An Answer</option>
-                                                <option value="0">0</option>
-                                                <option value="1">1</option>
-                                                <option value="2">2</option>
-                                                <option value="3">3</option>
-                                                <option value="4">4</option>
-                                                <option value="5">5</option>
-                                            </select><br><br>
+                                        <div class="block_1 hline-bottom"></div>
+                                        <div class="slidecontainer">
+                                            <h align="Center"><br>
+                                                <p class="lead">Q10. I see myself as conventional, uncreative.</p>
+                                                <input type="range" name = "bigfive-10" style="width: 100%;" value="4" min="1" max="7" step="1" class="slider"ß id="bigfive10" required>     
+                                            <div class="sliderticks">
+                                            <p>0</p>
+                                            <p>1</p>
+                                            <P>2</P>
+                                            <p>3</p>
+                                            <p>4</p>
+                                            <p>5</p>
+                                            <p>6</p>
+                                            <p>7</p>
+                                            </div>
+                                            <p>Value: <span id="bigfive-10"></span></p>
+                                        </span>
+                                            </h>
+                                        </div>
 
-                                            <div class="block_1 hline-bottom"></div>
-                                            <p class="lead">Q17. I make a mess of things.</p>
-                                            <select name = "big_five-17" id="2-17" required>
-                                                <option>Please Choose An Answer</option>
-                                                <option value="0">0</option>
-                                                <option value="1">1</option>
-                                                <option value="2">2</option>
-                                                <option value="3">3</option>
-                                                <option value="4">4</option>
-                                                <option value="5">5</option>
-                                            </select><br><br>
-
-                                            <div class="block_1 hline-bottom"></div>
-                                            <p class="lead">Q18. I seldom feel blue.</p>
-                                            <select name = "big_five-18" id="2-18" required>
-                                                <option>Please Choose An Answer</option>
-                                                <option value="0">0</option>
-                                                <option value="1">1</option>
-                                                <option value="2">2</option>
-                                                <option value="3">3</option>
-                                                <option value="4">4</option>
-                                                <option value="5">5</option>
-                                            </select><br><br>
-
-
-                                            <div class="block_1 hline-bottom"></div>
-                                            <p class="lead">Q19. I am not interested in abstract ideas.</p>
-                                            <select name = "big_five-19" id="2-19" required>
-                                                <option>Please Choose An Answer</option>
-                                                <option value="0">0</option>
-                                                <option value="1">1</option>
-                                                <option value="2">2</option>
-                                                <option value="3">3</option>
-                                                <option value="4">4</option>
-                                                <option value="5">5</option>
-                                                </select><br><br>
-
-
-                                            <div class="block_1 hline-bottom"></div>
-                                            <p class="lead">Q20. I start conversations.</p>
-                                            <select name = "big_five-20" id="2-20" required>
-                                                    <option>Please Choose An Answer</option>
-                                                    <option value="0">0</option>
-                                                    <option value="1">1</option>
-                                                    <option value="2">2</option>
-                                                    <option value="3">3</option>
-                                                    <option value="4">4</option>
-                                                    <option value="5">5</option>
-                                                </select><br><br>
-
-                                            <div class="block_1 hline-bottom"></div>
-                                            <p class="lead">Q21. I am not interested in other people's problems.</p>
-                                            <select name = "big_five-21" id="2-21" required>
-                                                    <option>Please Choose An Answer</option>
-                                                    <option value="0">0</option>
-                                                    <option value="1">1</option>
-                                                    <option value="2">2</option>
-                                                    <option value="3">3</option>
-                                                    <option value="4">4</option>
-                                                    <option value="5">5</option>
-                                                    </select><br><br>
-
-                                            <div class="block_1 hline-bottom"></div>
-
-                                            <p class="lead">Q22. I get chores done right away.</p>
-                                            <select name = "big_five-22" id="2-22" required>
-                                                    <option>Please Choose An Answer</option>
-                                                    <option value="0">0</option>
-                                                    <option value="1">1</option>
-                                                    <option value="2">2</option>
-                                                    <option value="3">3</option>
-                                                    <option value="4">4</option>
-                                                    <option value="5">5</option>
-                                                </select><br><br>
-
-
-
-                                            <div class="block_1 hline-bottom"></div>
-                                            <p class="lead">Q23. I get chores done right away.</p>
-                                            <select name = "big_five-23" id="2-23" required>
-                                                    <option>Please Choose An Answer</option>
-                                                    <option value="0">0</option>
-                                                    <option value="1">1</option>
-                                                    <option value="2">2</option>
-                                                    <option value="3">3</option>
-                                                    <option value="4">4</option>
-                                                    <option value="5">5</option>
-                                                </select><br><br>
-
-
-                                            <div class="block_1 hline-bottom"></div>
-                                            <p class="lead">Q24. I am easily disturbed.</p>
-                                            <select name = "big_five-24" id="2-24" required>
-                                                    <option>Please Choose An Answer</option>
-                                                    <option value="0">0</option>
-                                                    <option value="1">1</option>
-                                                    <option value="2">2</option>
-                                                    <option value="3">3</option>
-                                                    <option value="4">4</option>
-                                                    <option value="5">5</option>
-                                                </select><br><br>
-
-
-                                            <div class="block_1 hline-bottom"></div>
-                                            <p class="lead">Q25. I have excellent ideas.</p>
-                                            <select name = "big_five-25" id="2-25" required>
-                                                    <option>Please Choose An Answer</option>
-                                                    <option value="0">0</option>
-                                                    <option value="1">1</option>
-                                                    <option value="2">2</option>
-                                                    <option value="3">3</option>
-                                                    <option value="4">4</option>
-                                                    <option value="5">5</option>
-                                                </select>
-                                                <br><br>
+                                            <br>
                                             <button type="submit" value="Save">Save</button>
                                             </div>
                                             <br><br><br><br><br><br>
@@ -612,6 +511,69 @@
             },
 
         });
+    </script>
+    <!-- The following code is to represent each value of the scale slider of each personality question. -->
+    <script>
+        var slider1 = document.getElementById("bigfive1");
+        var demo1 = document.getElementById("bigfive-1");
+        demo1.innerHTML = slider1.value;
+        slider1.oninput = function() {
+            vq1 = demo1.innerHTML = this.value;
+        }
+        var slider2 = document.getElementById("bigfive2");
+        var demo2 = document.getElementById("bigfive-2");
+        demo2.innerHTML = slider2.value;
+        slider2.oninput = function() {
+            vq2 = demo2.innerHTML = this.value;
+        }
+        var slider3 = document.getElementById("bigfive3");
+        var demo3 = document.getElementById("bigfive-3");
+        demo3.innerHTML = slider3.value;
+        slider3.oninput = function() {
+            vq3 = demo3.innerHTML = this.value;
+        }
+        var slider4 = document.getElementById("bigfive4");
+        var demo4 = document.getElementById("bigfive-4");
+        demo4.innerHTML = slider4.value;
+        slider4.oninput = function() {
+            vq4 = demo4.innerHTML = this.value;
+        }
+        var slider5 = document.getElementById("bigfive5");
+        var demo5 = document.getElementById("bigfive-5");
+        demo5.innerHTML = slider5.value;
+        slider5.oninput = function() {
+            vq5 = demo5.innerHTML = this.value;
+        }
+        var slider6 = document.getElementById("bigfive6");
+        var demo6 = document.getElementById("bigfive-6");
+        demo6.innerHTML = slider6.value;
+        slider6.oninput = function() {
+            vq6 = demo6.innerHTML = this.value;
+        }
+        var slider7 = document.getElementById("bigfive7");
+        var demo7 = document.getElementById("bigfive-7");
+        demo7.innerHTML = slider7.value;
+        slider7.oninput = function() {
+            vq7 = demo7.innerHTML = this.value;
+        }
+        var slider8 = document.getElementById("bigfive8");
+        var demo8 = document.getElementById("bigfive-8");
+        demo8.innerHTML = slider8.value;
+        slider8.oninput = function() {
+            vq8 = demo8.innerHTML = this.value;
+        }
+        var slider9 = document.getElementById("bigfive9");
+        var demo9 = document.getElementById("bigfive-9");
+        demo9.innerHTML = slider9.value;
+        slider9.oninput = function() {
+            vq9 = demo9.innerHTML = this.value;
+        }
+        var slider10 = document.getElementById("bigfive10");
+        var demo10 = document.getElementById("bigfive-10");
+        demo10.innerHTML = slider10.value;
+        slider10.oninput = function() {
+            vq10 = demo10.innerHTML = this.value;
+        }
     </script>
 
 

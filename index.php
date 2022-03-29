@@ -1,22 +1,59 @@
-<!-- This page is the initial page of the site. A pre-defined user ID and password are asked to log-in. -->
+<!-- This page is v -->
+
+<?php require_once "controllerUserData.php"; ?>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<title>LOGIN</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="UTF-8">
+    <title>Login Form</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="main.css">
+    <style>
+        body {
+    background: #1690A7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+}
+    </style>
 </head>
 <body>
-     <form action="login.php" method="post">
-     	<h2>LOGIN</h2>
-     	<?php if (isset($_GET['error'])) { ?>
-     		<p class="error"><?php echo $_GET['error']; ?></p>
-     	<?php } ?>
-     	<label>User ID</label>
-     	<input type="text" name="uname" placeholder="User Name"><br>
-
-     	<label>Password</label>
-     	<input type="password" name="password" placeholder="Password"><br>
-     	<button type="submit">Login</button>
-     </form>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 offset-md-4 form login-form">
+                <form action="index.php" method="POST" autocomplete="">
+                    <h2 class="text-center">Login</h2>
+                    <p class="text-center">Login with your email and password.</p>
+                    <?php
+                    if(count($errors) > 0){
+                        ?>
+                        <div class="alert alert-danger text-center">
+                            <?php
+                            foreach($errors as $showerror){
+                                echo $showerror;
+                            }
+                            ?>
+                        </div>
+                        <?php
+                    }
+                    ?>
+                    <div class="form-group">
+                        <input class="form-control" type="email" name="email" placeholder="Email Address" required value="<?php echo $email ?>">
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" type="password" name="password" placeholder="Password" required>
+                    </div>
+                    <div class="link forget-pass text-left"><a href="forgot-password.php">Forgot password?</a></div>
+                    <div class="form-group">
+                        <input class="form-control button" type="submit" name="login" value="Login">
+                    </div>
+                    <div class="link login-link text-center">Need to sign up?    <a href="sign-up.php"> Sign Up</a></div>
+                </form>
+            </div>
+        </div>
+    </div>
+    
 </body>
 </html>

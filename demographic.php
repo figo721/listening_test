@@ -108,14 +108,12 @@
         
         .swiper-wrapper_v {
             align-items: center;
-            /* add this will all relevant prefixes */
         }
         
         .hline-bottom {
             padding-bottom: 10px;
             border-bottom: 2px solid #000;
-            /* whichever color
-        you prefer */
+  
         }
         
         * {
@@ -206,17 +204,48 @@
             text-align-last: center;
             -moz-text-align-last: center;
         }
+        @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+        nav{
+        padding-left: 100px!important;
+        padding-right: 100px!important;
+        background: #1690A7;
+        font-family: 'Poppins', sans-serif;
+        } 
+        nav a.navbar-brand{
+            color: #fff;
+            font-size: 30px!important;
+            font-weight: 500;
+        }
+        button a{
+            color: #6665ee;
+            font-weight: 500;
+        }
+        button a:hover{
+            text-decoration: none;
+        }
+        h1{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100%;
+            text-align: center;
+            transform: translate(-50%, -50%);
+            font-size: 50px;
+            font-weight: 600;
+        }
+
     </style>
 
 </head>
 
 <body>
+    <nav class="navbar">
+    <a class="navbar-brand" href="#">Listening Test</a>
+    </nav>
 
     <!--Demographic Survey-->
     <div class="swiper mySwiper swiper-h">
-    <h1 style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color:darkblue;">
-            Listening Test
-    </h1>
+    
         <div class="swiper-wrapper">
          <div class="center_1">
             <div class="swiper-slide">
@@ -235,16 +264,16 @@
 
                                     <div class="control-group">
                                     <form action="insert_2.php" method="POST">
-
+                                        
                                         <div class="form-group floating-label-form-group controls mb-0 pb-2">
 
                                             <p class="lead">Q1.What is your gender?</p>
                                             <select name = "demographic_1" id="1-1" required>
                                                 <option>Please Choose An Answer</option>
-                                                    <option value="Female">Female</option>
-                                                    <option value="Male">Male</option>
-                                                    <option value="Others">Others</option>
-                                                    <option value="Prefer">Prefer not to say</option>
+                                                <option value="Female">Female</option>
+                                                <option value="Male">Male</option>
+                                                <option value="Others">Others</option>
+                                                <option value="Prefer">Prefer not to say</option>
                                             </select><br><br>
 
                                             <div class="block_1 hline-bottom"></div>
@@ -268,9 +297,9 @@
                                             </p>
                                             <select name = "demographic_3" id="1-3" required>
                                                 <option>Please Choose An Answer</option>
-                                                <option value="online">Online</option>
-                                                <option value="offline">Offline</option>
-                                                <option value="None">None of them</option>
+                                                <option value="online">Online (Streaming)</option>
+                                                <option value="offline">Offline (Download)</option>
+                                                <option value="None">Other</option>
                                             </select><br><br>
                                         <button type="submit" value="Save">Save</button>
                                         </div>

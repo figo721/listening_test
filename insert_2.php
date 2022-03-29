@@ -1,6 +1,6 @@
 <!-- This page is to update user input values from the page of "demographic.php" page to the databse -->
 
-<?php include "config.php";
+<?php include "connection.php";
 session_start();
 
 # To call the values from the page of "demographic.php"
@@ -9,7 +9,7 @@ $Age =  $_REQUEST['demographic_2'];
 $Download = $_REQUEST['demographic_3'];
     
 // Performing insert query execution
-$sql = "UPDATE listening_test SET gender = '$Gender', age = '$Age', download = '$Download' WHERE (username = '$_SESSION[username]')";
+$sql = "UPDATE usertable SET gender = '$Gender', age = '$Age', download = '$Download' WHERE (email = '$_SESSION[email]')";
 
 # When all the questions are not answered properly, redirect to the samge page ("demographic.php").
 if ($Gender ==='Please Choose An Answer' || $Age === 'Please Choose An Answer' || $Download === 'Please Choose An Answer')
@@ -25,7 +25,7 @@ else{
     if (mysqli_query($con, $sql)){
         echo ("<script LANGUAGE='JavaScript'>
         window.alert('Data Saved Succesfully');
-        window.location.href='./bigfive.php';
+        window.location.href='./select-test.php';
         </script>");
         exit();
     }
